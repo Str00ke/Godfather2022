@@ -4,54 +4,38 @@ using UnityEngine;
 
 public class BlockInput : MonoBehaviour
 {
-    [SerializeField]
     private Transform startPosition;
-    [SerializeField]
-    private Transform endPosition;
 
-    // Time when the movement started.
-    private float startTime;
+    public Transform QPosition;
+    public Transform DPosition;
+    public Transform SpacePosition;
 
-    // Movement speed in units per second.
-    public float speed = 1.0F;
+    // Rock Falling speed
+    public float rockFallingSpeed = 0.7F;
 
-    // Total distance between the markers.
-    private float journeyLength;
-
-    [SerializeField]
-    private GameObject gameObject;
-    [SerializeField]
-    AnimationCurve animationCurve;
+    public AnimationCurve animationCurve;
 
     public bool isActiveQ;
-    public bool isActiveEscape;
     public bool isActiveD;
+    public bool isActiveSpace;
 
     private void Start()
     {
-        // Keep a note of the time the movement started.
-        startTime = Time.time;
-
+        isActiveQ = true;
+        isActiveD = true;
+        isActiveSpace = true;
         startPosition = gameObject.transform;
-
-        // Calculate the journey length.
-        journeyLength = Vector3.Distance(startPosition.position, endPosition.position);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            StartCoroutine(FallCor(startPosition, endPosition, gameObject));
-        }
-
         if (Input.GetKey(KeyCode.Q) && isActiveQ)
         {
             Debug.Log("Q");
         }
-        if (Input.GetKey(KeyCode.Escape) && isActiveEscape)
+        if (Input.GetKey(KeyCode.Space) && isActiveSpace)
         {
-            Debug.Log("Escape");
+            Debug.Log("Space");
         }
         if (Input.GetKey(KeyCode.D) && isActiveD)
         {
@@ -59,28 +43,23 @@ public class BlockInput : MonoBehaviour
         }
     }
 
-    IEnumerator FallCor(Transform sPos, Transform ePos, GameObject fallingObject)
-    {
-        Vector3 start = sPos.position;
-        Vector3 end = ePos.position;
-        float index = 0;
-        float t = 0;
 
-        while (index < 1)
+
+    public void EnableInput(RockFall.InputBlock blockedInput, bool enable = true)
+    {
+        switch (blockedInput)
         {
-            fallingObject.transform.position = Vector3.Lerp(start, end, t);
-            t = animationCurve.Evaluate(index);
-            index += Time.deltaTime * speed;
-            yield return null;
+            case RockFall.InputBlock.Q:
+                isActiveQ = enable;
+                break;
+            case RockFall.InputBlock.D:
+                isActiveD = enable;
+                break;
+            case RockFall.InputBlock.Space:
+                isActiveSpace = enable;
+                break;
+            default:
+                break;
         }
-
-        DisableInput();
-
-        yield return null;
-    }
-
-    private void DisableInput()
-    {
-        
     }
 }
