@@ -12,12 +12,12 @@ public class PlayerControls : MonoBehaviour
     public float jumpIntensity;
     public float gravityScale;
 
-
-    [Header("GroundCheck Parameters")]
-    public Transform groundCheck;
-    public float groundCheckRadius;
     public bool isGrounded = false;
-    public LayerMask myLayer;
+
+    private void Awake()
+    {
+        playerRb = GetComponent<Rigidbody2D>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -40,18 +40,23 @@ public class PlayerControls : MonoBehaviour
             Debug.Log(" Z Pressed");
             if (isGrounded)
             {
-            isGrounded = false;
-            Vector2 jump = new Vector2(playerRb.velocity.x, 1 * jumpIntensity);
+                isGrounded = false;
+                Vector2 jump = new Vector2(playerRb.velocity.x, 1 * jumpIntensity);
                 playerRb.velocity = jump;
             }
         }
 
-            //Gravity
-            if (!isGrounded)
-            {
-                Vector2 fall = new Vector2(playerRb.velocity.x, playerRb.velocity.y - gravityScale);
-                playerRb.velocity = fall;
-            }
+        //Gravity
+        if (!isGrounded)
+        {
+            Vector2 fall = new Vector2(playerRb.velocity.x, playerRb.velocity.y - gravityScale);
+            playerRb.velocity = fall;
+        } else
+        {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up * transform.localScale.y, 1, LayerMask.GetMask("Plateform"));
+            if (hit.collider == null && isGrounded) isGrounded = false;
+        }
+            
     }
 
 
@@ -69,12 +74,5 @@ public class PlayerControls : MonoBehaviour
         }
     }
 
-
-    // Draw a Gizmo of the GroundCheck
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
-    }
 
 }
