@@ -53,7 +53,7 @@ public class PlayerControls : MonoBehaviour
             playerRb.velocity = fall;
         } else
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, 1, LayerMask.GetMask("Plateform"));
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up * transform.localScale.y, 1, LayerMask.GetMask("Plateform"));
             if (hit.collider == null && isGrounded) isGrounded = false;
         }
             
