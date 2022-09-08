@@ -56,6 +56,12 @@ public class PlayerControls : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up * transform.localScale.y, 1, LayerMask.GetMask("Plateform"));
             if (hit.collider == null && isGrounded) isGrounded = false;
         }
+
+        //Falling offstage
+        if (transform.position.y <= -5)
+        {
+            Debug.Log("Player fell off");
+        }
             
     }
 
