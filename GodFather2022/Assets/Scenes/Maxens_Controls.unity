@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 206734007}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platforms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 241314922}
   - component: {fileID: 241314921}
   - component: {fileID: 241314923}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -304,14 +304,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerRb: {fileID: 578744048}
   speed: 2
-  jumpIntensity: 3
+  jumpIntensity: 1.5
   gravityScale: 0.025
-  groundCheck: {fileID: 1602668293}
-  groundCheckRadius: 0.04
-  isGrounded: 0
-  myLayer:
-    serializedVersion: 2
-    m_Bits: 0
+  isGrounded: 1
 --- !u!212 &578744047
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -409,7 +404,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 578744045}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.649, y: 0.246, z: 0.031872313}
+  m_LocalPosition: {x: -4.641, y: 0.265, z: 0.031872313}
   m_LocalScale: {x: 1, y: 1.8962, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -470,7 +465,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 616763666}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.73435, y: 0.267, z: -0.011884492}
+  m_LocalPosition: {x: -3.044, y: 0.247, z: -0.011884492}
   m_LocalScale: {x: 2.5974407, y: 1.07382, z: 3.3}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -552,7 +547,7 @@ GameObject:
   - component: {fileID: 632333791}
   - component: {fileID: 632333793}
   - component: {fileID: 632333792}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform (3)
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -663,7 +658,7 @@ GameObject:
   - component: {fileID: 756993217}
   - component: {fileID: 756993219}
   - component: {fileID: 756993218}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform (2)
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -905,7 +900,7 @@ GameObject:
   - component: {fileID: 830542811}
   - component: {fileID: 830542813}
   - component: {fileID: 830542812}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform (1)
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -1016,7 +1011,7 @@ GameObject:
   - component: {fileID: 1597731086}
   - component: {fileID: 1597731088}
   - component: {fileID: 1597731087}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform (5)
   m_TagString: Platform
   m_Icon: {fileID: 0}
