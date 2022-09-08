@@ -1,0 +1,155 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1460393294857267172
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1460393294857267174}
+  - component: {fileID: 1460393294857267175}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1460393294857267174
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460393294857267172}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 258.21432, y: 22.079596, z: 14.976525}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1460393294857267175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460393294857267172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 221703c8ab311534ba74643d9ca3cb53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: BgMusic
+    clips:
+    - {fileID: 8300000, guid: be7b3330c4b2dfd4ba52f50759fd3364, type: 3}
+    volume: 0.694
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+    hasMultipleClips: 0
+  - name: MenuMusic
+    clips:
+    - {fileID: 8300000, guid: 509762e28b2a0804a847bb6857299b85, type: 3}
+    volume: 0.694
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+    hasMultipleClips: 0
+  - name: BreakRock
+    clips:
+    - {fileID: 8300000, guid: f4928e550bd3d8f47b030ec4f8d07a96, type: 3}
+    volume: 0.694
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+    hasMultipleClips: 0
+  - name: RockTouchGround
+    clips:
+    - {fileID: 8300000, guid: 882ffc63ac62a5a4695060ed108257a3, type: 3}
+    volume: 0.694
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+    hasMultipleClips: 0
+  - name: MenuBtnSelect
+    clips:
+    - {fileID: 8300000, guid: c6721a5eeb6ec2f41a11a50dab98bac6, type: 3}
+    volume: 0.694
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+    hasMultipleClips: 0
+  - name: Jump
+    clips:
+    - {fileID: 8300000, guid: 6bf90d6dcd2da084f86d99e71dbcdb14, type: 3}
+    volume: 0.694
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+    hasMultipleClips: 0
+  - name: Win
+    clips:
+    - {fileID: 8300000, guid: bfd3a0c1a8a78844283170d513367410, type: 3}
+    volume: 0.694
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+    hasMultipleClips: 0
+  - name: Lose
+    clips:
+    - {fileID: 8300000, guid: bf95704aea3eab34b96633a8854505f7, type: 3}
+    volume: 0.694
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+    hasMultipleClips: 0
+  - name: PlayerTouchGround
+    clips:
+    - {fileID: 8300000, guid: 278d3afdb612f3e46a3bc794d6973cb8, type: 3}
+    volume: 0.694
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+    hasMultipleClips: 0
+  - name: MenuBtnHighlight
+    clips:
+    - {fileID: 8300000, guid: e4b290fc899f091448901858feb0c6cc, type: 3}
+    volume: 0.694
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+    hasMultipleClips: 0
+  - name: ShootMiss
+    clips:
+    - {fileID: 8300000, guid: e5eb3bf250b377645bf6cf8dda23be93, type: 3}
+    volume: 0.694
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+    hasMultipleClips: 0
+  - name: RockFall
+    clips:
+    - {fileID: 8300000, guid: 46d48508c50bee246a42affbe0ff1b85, type: 3}
+    volume: 0.694
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+    hasMultipleClips: 0
