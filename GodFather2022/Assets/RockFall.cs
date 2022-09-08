@@ -13,6 +13,14 @@ public class RockFall : MonoBehaviour
     private Transform inputBlockPos;
 
 
+    private Vector3 startPos;
+
+
+    private void Awake()
+    {
+        startPos = transform.position;
+    }
+
     private void Start()
     {
         switch (inputToBlock)
@@ -60,7 +68,8 @@ public class RockFall : MonoBehaviour
     private void DestroyRock()
     {
         blockInput.EnableInput(inputToBlock);
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
+        transform.position = startPos;
     }
 
     public enum InputBlock

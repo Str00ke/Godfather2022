@@ -9,8 +9,11 @@ public class Visor : MonoBehaviour
     [SerializeField] private RectTransform zone;
     [SerializeField] private float range;
     [SerializeField] private float yThresold;
+    [SerializeField] private float speed;
 
     private RectTransform rT;
+
+    private bool hasShot = false;
 
     private void Awake()
     {
@@ -19,7 +22,7 @@ public class Visor : MonoBehaviour
 
     void Start()
     {
-        transform.position = zone.rect.center;
+        transform.position = zone.transform.position + (Vector3)zone.rect.center;
     }
 
 
@@ -32,7 +35,6 @@ public class Visor : MonoBehaviour
         if (vec.x > 0)
         {
             if (transform.localPosition.x + vec.x > zone.rect.xMax) vec.x = 0;
-            Debug.Log("VEC X: " + vec.x);
         }
         else if (vec.x < 0)
         {
@@ -48,13 +50,15 @@ public class Visor : MonoBehaviour
             if (rT.anchoredPosition.y + vec.y < zone.rect.yMin) vec.y = 0;
         }
 
-        transform.position += (Vector3)vec;
+        transform.position += (Vector3)vec * speed;
 
-        if (Input.GetMouseButtonDown(0)) Shoot();
+        if (Joystick.current.trigger.isPressed && !hasShot) Shoot();
+        else if (!Joystick.current.trigger.isPressed && hasShot) hasShot = false;
     }
 
     void Shoot()
     {
+        hasShot = true;
         Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, range);
         for (int i = 0; i < cols.Length; i++)
         {
