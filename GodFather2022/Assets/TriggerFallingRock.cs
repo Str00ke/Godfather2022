@@ -43,7 +43,6 @@ public class TriggerFallingRock : MonoBehaviour
         }
 
         RockFall fallingRock = GameManager.instance.rockFalls[(int)selected].gameObject.GetComponent<RockFall>();
-        StartCoroutine(fallingRock.FallCor());
-        Destroy(gameObject);
+        StartCoroutine(fallingRock.FallCor(gameObject));
     }
 }
