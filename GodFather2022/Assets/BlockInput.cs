@@ -19,8 +19,13 @@ public class BlockInput : MonoBehaviour
     public bool isActiveD;
     public bool isActiveSpace;
 
+    private PlayerControls pControls;
+
+
     private void Start()
     {
+        pControls = FindObjectOfType<PlayerControls>();
+
         isActiveQ = true;
         isActiveD = true;
         isActiveSpace = true;
@@ -51,12 +56,15 @@ public class BlockInput : MonoBehaviour
         {
             case RockFall.InputBlock.Q:
                 isActiveQ = enable;
+                pControls.baseVec.x = enable ? 1 : 0;
                 break;
             case RockFall.InputBlock.D:
                 isActiveD = enable;
+                pControls.baseVec.y = enable ? 1 : 0;
                 break;
             case RockFall.InputBlock.Space:
                 isActiveSpace = enable;
+                pControls.baseVec.z = enable ? 1 : 0;
                 break;
             default:
                 break;
