@@ -12,6 +12,9 @@ public class PlayerControls : MonoBehaviour
     public float jumpIntensity;
     public float gravityScale;
 
+    [Header("Death Conditions")]
+    public float falloffThreshold;
+
     public bool isGrounded = false;
 
     public Vector3 baseVec = Vector3.one;
@@ -65,7 +68,20 @@ public class PlayerControls : MonoBehaviour
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, groundTestVal, plateformLayer);
         if (hit.collider == null && isGrounded) isGrounded = false;
+
+        if (transform.position.y <= falloffThreshold)
+        {
+            DisplayLose();
+        }
     }
+
+    private void DisplayLose()
+    {
+        Debug.Log("LEVEL CLEARED");
+        GameManager.instance.panelLose.SetActive(true);
+        Time.timeScale = 0;
+    }
+
 
 
     private void FixedUpdate()

@@ -8,6 +8,10 @@ public class GameManager : MonoBehaviour
 
     public RockFall[] rockFalls;
 
+    [Header("Panels")]
+    public GameObject panelWin;
+    public GameObject panelLose;
+
     void Awake()
     {
         instance = this;

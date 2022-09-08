@@ -24,7 +24,14 @@ public class WinTrigger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
-            Debug.Log("Player Cleared The Level !!");
+            DisplayWin();
+    }
+
+    private void DisplayWin()
+    {
+        Debug.Log("LEVEL CLEARED");
+        GameManager.instance.panelWin.SetActive(true);
+        Time.timeScale = 0;
     }
 
 }
