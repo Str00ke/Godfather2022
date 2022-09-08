@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b801453fcb1bd784ba623b816111ae25, type: 3}
   m_Name: TemplateFeature
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   passSettings:
     renderPassEvent: 1000
     material: {fileID: 2100000, guid: 48bae17fc68deb54fabc3b23639918a5, type: 2}

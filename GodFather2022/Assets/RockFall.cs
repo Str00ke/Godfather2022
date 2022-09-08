@@ -12,6 +12,7 @@ public class RockFall : MonoBehaviour
 
     private Transform inputBlockPos;
 
+
     private void Start()
     {
         switch (inputToBlock)
@@ -28,6 +29,12 @@ public class RockFall : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+            StartCoroutine(FallCor());
     }
 
     public IEnumerator FallCor()
@@ -50,7 +57,7 @@ public class RockFall : MonoBehaviour
         yield return null;
     }
 
-    public void DestroyRock()
+    private void DestroyRock()
     {
         blockInput.EnableInput(inputToBlock);
         Destroy(this.gameObject);
@@ -61,5 +68,10 @@ public class RockFall : MonoBehaviour
         Q,
         D,
         Space
+    }
+
+    public void GetHit()
+    {
+        DestroyRock();
     }
 }

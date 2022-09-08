@@ -14,6 +14,6 @@ public class GamepadTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(string.Join("\n", Gamepad.all));
+        Debug.Log(string.Join("\n", Joystick.all));
     }
 }
