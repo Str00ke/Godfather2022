@@ -68,5 +68,6 @@ public class Visor : MonoBehaviour
                 break;
             }
         }
+        FindObjectOfType<AudioManager>().Play("ShootMiss");
     }
 }

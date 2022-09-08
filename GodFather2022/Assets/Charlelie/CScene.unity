@@ -1028,6 +1028,159 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1178546844
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1178546846}
+  - component: {fileID: 1178546845}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1178546845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178546844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 221703c8ab311534ba74643d9ca3cb53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: BgMusic
+    clips:
+    - {fileID: 8300000, guid: be7b3330c4b2dfd4ba52f50759fd3364, type: 3}
+    volume: 0.382
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+    hasMultipleClips: 0
+  - name: BreakRock
+    clips:
+    - {fileID: 8300000, guid: f4928e550bd3d8f47b030ec4f8d07a96, type: 3}
+    volume: 0.145
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+    hasMultipleClips: 0
+  - name: RockTouchGround
+    clips:
+    - {fileID: 8300000, guid: 882ffc63ac62a5a4695060ed108257a3, type: 3}
+    volume: 0.848
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+    hasMultipleClips: 0
+  - name: MenuBtnSelect
+    clips:
+    - {fileID: 8300000, guid: c6721a5eeb6ec2f41a11a50dab98bac6, type: 3}
+    volume: 0.183
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+    hasMultipleClips: 0
+  - name: Jump
+    clips:
+    - {fileID: 8300000, guid: 6bf90d6dcd2da084f86d99e71dbcdb14, type: 3}
+    volume: 0.188
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+    hasMultipleClips: 0
+  - name: Win
+    clips:
+    - {fileID: 8300000, guid: bfd3a0c1a8a78844283170d513367410, type: 3}
+    volume: 0.204
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+    hasMultipleClips: 0
+  - name: Lose
+    clips:
+    - {fileID: 8300000, guid: bf95704aea3eab34b96633a8854505f7, type: 3}
+    volume: 0.204
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+    hasMultipleClips: 0
+  - name: PlayerTouchGround
+    clips:
+    - {fileID: 8300000, guid: 278d3afdb612f3e46a3bc794d6973cb8, type: 3}
+    volume: 0.202
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+    hasMultipleClips: 0
+  - name: MenuBtnHighlight
+    clips:
+    - {fileID: 8300000, guid: e4b290fc899f091448901858feb0c6cc, type: 3}
+    volume: 0.218
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+    hasMultipleClips: 0
+  - name: RockFall
+    clips:
+    - {fileID: 8300000, guid: 46d48508c50bee246a42affbe0ff1b85, type: 3}
+    volume: 0.699
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+    hasMultipleClips: 0
+  - name: ShootMiss
+    clips:
+    - {fileID: 8300000, guid: e5eb3bf250b377645bf6cf8dda23be93, type: 3}
+    volume: 0.738
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+    hasMultipleClips: 0
+  - name: MenuMusic
+    clips:
+    - {fileID: 8300000, guid: 509762e28b2a0804a847bb6857299b85, type: 3}
+    volume: 0.218
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+    hasMultipleClips: 0
+--- !u!4 &1178546846
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178546844}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.77314985, y: 0.26437807, z: -0.045892484}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1284227346
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,79 +1403,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1 &1754209258
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1754209260}
-  - component: {fileID: 1754209259}
-  - component: {fileID: 1754209261}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1754209259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1754209258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d1e7a16c97a781448a5191f599fdf17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  key: 0
-  random: 0
---- !u!4 &1754209260
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1754209258}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.2692843}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1754209261
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1754209258}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &1889319300
 GameObject:
   m_ObjectHideFlags: 0
@@ -1439,6 +1519,63 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7390639158233808911, guid: 62330e901db9077499df86c34e918152, type: 3}
   m_PrefabInstance: {fileID: 7390639158393232068}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5928221638793189721
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5928221637324456627, guid: 2ee21f3d66dddc041986309c5c0a96b9, type: 3}
+      propertyPath: m_Name
+      value: RockFallTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 5928221637324456629, guid: 2ee21f3d66dddc041986309c5c0a96b9, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5928221637324456629, guid: 2ee21f3d66dddc041986309c5c0a96b9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5928221637324456629, guid: 2ee21f3d66dddc041986309c5c0a96b9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5928221637324456629, guid: 2ee21f3d66dddc041986309c5c0a96b9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.2692843
+      objectReference: {fileID: 0}
+    - target: {fileID: 5928221637324456629, guid: 2ee21f3d66dddc041986309c5c0a96b9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5928221637324456629, guid: 2ee21f3d66dddc041986309c5c0a96b9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5928221637324456629, guid: 2ee21f3d66dddc041986309c5c0a96b9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5928221637324456629, guid: 2ee21f3d66dddc041986309c5c0a96b9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5928221637324456629, guid: 2ee21f3d66dddc041986309c5c0a96b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5928221637324456629, guid: 2ee21f3d66dddc041986309c5c0a96b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5928221637324456629, guid: 2ee21f3d66dddc041986309c5c0a96b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2ee21f3d66dddc041986309c5c0a96b9, type: 3}
 --- !u!224 &6243563837775151468
 RectTransform:
   m_ObjectHideFlags: 0

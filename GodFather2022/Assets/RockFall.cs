@@ -41,8 +41,6 @@ public class RockFall : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-            StartCoroutine(FallCor());
     }
 
     public IEnumerator FallCor()
@@ -51,7 +49,7 @@ public class RockFall : MonoBehaviour
         Vector3 end = inputBlockPos.position;
         float index = 0;
         float t = 0;
-
+        FindObjectOfType<AudioManager>().Play("RockFall");
         while (index < 1)
         {
             this.gameObject.transform.position = Vector3.Lerp(start, end, t);
@@ -60,6 +58,8 @@ public class RockFall : MonoBehaviour
             yield return null;
         }
 
+        FindObjectOfType<AudioManager>().Stop("RockFall");
+        FindObjectOfType<AudioManager>().Play("RockTouchGround");
         blockInput.EnableInput(inputToBlock, false);
 
         yield return null;
@@ -70,6 +70,7 @@ public class RockFall : MonoBehaviour
         blockInput.EnableInput(inputToBlock);
         //Destroy(this.gameObject);
         transform.position = startPos;
+        FindObjectOfType<AudioManager>().Play("BreakRock");
     }
 
     public enum InputBlock
