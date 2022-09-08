@@ -43,7 +43,7 @@ public class RockFall : MonoBehaviour
     {
     }
 
-    public IEnumerator FallCor()
+    public IEnumerator FallCor(GameObject trigger)
     {
         Vector3 start = this.gameObject.transform.position;
         Vector3 end = inputBlockPos.position;
@@ -57,11 +57,11 @@ public class RockFall : MonoBehaviour
             index += Time.deltaTime * blockInput.rockFallingSpeed;
             yield return null;
         }
-
+        transform.position = end;
         FindObjectOfType<AudioManager>().Stop("RockFall");
         FindObjectOfType<AudioManager>().Play("RockTouchGround");
         blockInput.EnableInput(inputToBlock, false);
-
+        Destroy(trigger);
         yield return null;
     }
 
