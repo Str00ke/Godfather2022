@@ -12,6 +12,9 @@ public class PlayerControls : MonoBehaviour
     public float jumpIntensity;
     public float gravityScale;
 
+    [Header("Death Conditions")]
+    public float falloffThreshold;
+
     public bool isGrounded = false;
 
     public Vector3 baseVec = Vector3.one;
@@ -28,7 +31,7 @@ public class PlayerControls : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FindObjectOfType<AudioManager>().Play("BgMusic");   
+        
     }
 
     // Update is called once per frame
@@ -47,10 +50,9 @@ public class PlayerControls : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Z) && baseVec.z > 0)
         {
-            
+            Debug.Log(" Z Pressed");
             if (isGrounded)
             {
-                FindObjectOfType<AudioManager>().Play("Jump");
                 isGrounded = false;
                 Vector2 jump = new Vector2(playerRb.velocity.x, 1 * jumpIntensity);
                 playerRb.velocity = jump;
@@ -66,7 +68,20 @@ public class PlayerControls : MonoBehaviour
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, groundTestVal, plateformLayer);
         if (hit.collider == null && isGrounded) isGrounded = false;
+
+        if (transform.position.y <= falloffThreshold)
+        {
+            Death();
+        }
     }
+
+    public void Death()
+    {
+        Debug.Log("GAME OVER");
+        GameManager.instance.panelLose.SetActive(true);
+        Time.timeScale = 0;
+    }
+
 
 
     private void FixedUpdate()
@@ -83,8 +98,8 @@ public class PlayerControls : MonoBehaviour
     {
         if(collision.gameObject.tag == "Platform")
         {
+            Debug.Log("Collision with platform");
             isGrounded = true;
-            FindObjectOfType<AudioManager>().Play("PlayerTouchGround");
         }
     }
 
