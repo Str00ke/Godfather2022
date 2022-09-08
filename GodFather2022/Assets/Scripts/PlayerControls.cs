@@ -31,7 +31,7 @@ public class PlayerControls : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        FindObjectOfType<AudioManager>().Play("BgMusic");
     }
 
     // Update is called once per frame
@@ -50,9 +50,9 @@ public class PlayerControls : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Z) && baseVec.z > 0)
         {
-            Debug.Log(" Z Pressed");
             if (isGrounded)
             {
+                FindObjectOfType<AudioManager>().Play("Jump");
                 isGrounded = false;
                 Vector2 jump = new Vector2(playerRb.velocity.x, 1 * jumpIntensity);
                 playerRb.velocity = jump;
@@ -77,7 +77,8 @@ public class PlayerControls : MonoBehaviour
 
     public void Death()
     {
-        Debug.Log("GAME OVER");
+        FindObjectOfType<AudioManager>().Stop("BgMusic");
+        FindObjectOfType<AudioManager>().Play("Lose");
         GameManager.instance.panelLose.SetActive(true);
         Time.timeScale = 0;
     }
@@ -98,7 +99,8 @@ public class PlayerControls : MonoBehaviour
     {
         if(collision.gameObject.tag == "Platform")
         {
-            Debug.Log("Collision with platform");
+            FindObjectOfType<AudioManager>().Stop("BgMusic");
+            FindObjectOfType<AudioManager>().Play("PlayerTouchGround");
             isGrounded = true;
         }
     }

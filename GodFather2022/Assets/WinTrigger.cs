@@ -29,7 +29,7 @@ public class WinTrigger : MonoBehaviour
 
     private void DisplayWin()
     {
-        Debug.Log("LEVEL CLEARED");
+        FindObjectOfType<AudioManager>().Play("Win");
         GameManager.instance.panelWin.SetActive(true);
         Time.timeScale = 0;
     }

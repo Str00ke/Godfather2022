@@ -21,12 +21,15 @@ public class TriggerFallingRock : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0)) Activate();
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Activate();
+        if (collision.CompareTag("Player"))
+        {
+            Activate();     
+        }
     }      
     
     void Activate()
@@ -40,6 +43,6 @@ public class TriggerFallingRock : MonoBehaviour
         }
 
         RockFall fallingRock = GameManager.instance.rockFalls[(int)selected].gameObject.GetComponent<RockFall>();
-        StartCoroutine(fallingRock.FallCor());
+        StartCoroutine(fallingRock.FallCor(gameObject));
     }
 }
