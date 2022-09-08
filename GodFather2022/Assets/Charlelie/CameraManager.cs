@@ -10,6 +10,7 @@ public class CameraManager : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private Material changeScreenMat;
 
+    private Deathzone deathzoneScript;
     private Camera cam;
     private float verticalSize;
     private float horizontalSize;
@@ -17,6 +18,7 @@ public class CameraManager : MonoBehaviour
     private void Awake()
     {
         cam = Camera.main;
+        deathzoneScript = FindObjectOfType<Deathzone>();
         verticalSize = Camera.main.orthographicSize * 2.0f;
         horizontalSize = verticalSize * Screen.width / Screen.height;
     }
@@ -41,6 +43,8 @@ public class CameraManager : MonoBehaviour
         changeScreenMat.SetFloat("_isActive", 1);
 
         cam.transform.position = new Vector3(cam.transform.position.x + horizontalSize - rightLimitThresold, cam.transform.position.y, -10);
+        deathzoneScript.Ison = false;
+        deathzoneScript.ChangeInt();
     }
 
     Texture2D toTexture2D(RenderTexture rTex)
