@@ -81,6 +81,7 @@ public class PlayerControls : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("Lose");
         GameManager.instance.panelLose.SetActive(true);
         Time.timeScale = 0;
+        Destroy(gameObject);
     }
 
 
@@ -99,7 +100,6 @@ public class PlayerControls : MonoBehaviour
     {
         if(collision.gameObject.tag == "Platform")
         {
-            FindObjectOfType<AudioManager>().Stop("BgMusic");
             FindObjectOfType<AudioManager>().Play("PlayerTouchGround");
             isGrounded = true;
         }

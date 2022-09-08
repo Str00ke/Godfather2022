@@ -44,8 +44,13 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
-            s.source.Play();
+            if (s.playOneShot)
+            {
+                s.source.PlayOneShot(s.clips[0]);
+            }
+            else s.source.Play();
         }
+        
     }
 
     public void Stop(string name)

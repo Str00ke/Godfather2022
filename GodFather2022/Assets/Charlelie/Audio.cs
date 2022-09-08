@@ -21,4 +21,6 @@ public class Audio
 
     [HideInInspector]
     public bool hasMultipleClips;
+
+    public bool playOneShot;
 }

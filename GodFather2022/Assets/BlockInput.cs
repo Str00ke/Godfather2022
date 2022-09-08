@@ -34,18 +34,7 @@ public class BlockInput : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Q) && isActiveQ)
-        {
-            Debug.Log("Q");
-        }
-        if (Input.GetKey(KeyCode.Space) && isActiveSpace)
-        {
-            Debug.Log("Space");
-        }
-        if (Input.GetKey(KeyCode.D) && isActiveD)
-        {
-            Debug.Log("D");
-        }
+
     }
 
 

@@ -14,9 +14,19 @@ public class GameManager : MonoBehaviour
     public GameObject panelLose;
     public GameObject paneHowToPlay;
 
+    [SerializeField] private SpriteRenderer bgSr;
+    [SerializeField] private List<Sprite> bgSpriteList = new List<Sprite>();
+    private List<Sprite> bgSpriteArr = new List<Sprite>();
+    private int index = -1;
+
     void Awake()
     {
         instance = this;
+
+        for (int i = 0; i < 50; i++)
+        {
+            bgSpriteArr.Add(bgSpriteList[Random.Range(0, bgSpriteList.Count)]);
+        }
     }
 
     private void Start()
@@ -47,5 +57,11 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
+
+    public void UpdateBackground()
+    {
+        index++;
+        bgSr.sprite = bgSpriteArr[index];
+    }
 
 }

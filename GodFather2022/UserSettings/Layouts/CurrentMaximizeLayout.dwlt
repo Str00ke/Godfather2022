@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 35345
+  controlID: 52671
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 35346
+  controlID: 52672
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 35347
+  controlID: 52673
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -187,8 +187,8 @@ MonoBehaviour:
     y: 0
     width: 331.2
     height: 432.8
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -227,7 +227,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 4e0ffeff2039feff143afeffb83bfefffc56feff125dfeff285efeffa29cffff8e9fffff1ca6fffffcfaffffcc6f0000749e0000a0a20000baa20000bea2000058ed000098ed000050ef000072ef000074f80000acf80000b4f80000
+      m_ExpandedIDs: 76f8fdff96f8fdffa6f9fdff4e0ffeff2039feff143afeffb83bfefffc56feff125dfeff285efeffa29cffff8e9fffff1ca6fffffcfafffff4ffffffcc6f0000749e0000a0a20000baa20000bea2000058ed000098ed000050ef000072ef0000acf8000016fe0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -270,8 +270,8 @@ MonoBehaviour:
     y: 0
     width: 345.59998
     height: 432.8
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 8}
   m_Panes:
   - {fileID: 8}
@@ -525,9 +525,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 258.21432, y: 22.079596, z: 14.976525}
+    m_Target: {x: 0.08491445, y: -0.46983513, z: 0.022473061}
     speed: 2
-    m_Value: {x: 258.21432, y: 22.079596, z: 14.976525}
+    m_Value: {x: 0.08491445, y: -0.46983513, z: 0.022473061}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -578,9 +578,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1459.5731
+    m_Target: 7.7526984
     speed: 2
-    m_Value: 1459.5731
+    m_Value: 7.7526984
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1275,21 +1275,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Charlelie
+    - Assets/Sounds
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 60
   m_LastFolders:
-  - Assets/Charlelie
+  - Assets/Sounds
   m_LastFoldersGridSize: 60
   m_LastProjectPath: C:\Users\Charlelie\OneDrive - De Vinci\Bureau\Godfather2022\GodFather2022
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 9c840000
-    m_LastClickedID: 33948
+    m_SelectedIDs: 52d90000
+    m_LastClickedID: 55634
     m_ExpandedIDs: 000000006c70000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1343,9 +1343,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 8a0efeff
-    m_LastClickedInstanceID: -127350
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 72f8fdff
+    m_LastClickedInstanceID: -133006
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1396,7 +1396,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 506.4
-    width: 1131.8
+    width: 1033.4
     height: 277
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -1424,7 +1424,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 506.4
-    width: 1145.4
+    width: 1033.4
     height: 277
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -1549,12 +1549,12 @@ MonoBehaviour:
       oldMaxSizes: 
       oldSplitSize: 0
     m_HorizontalSplitter:
-      ID: 17958
+      ID: 45362
       splitterInitialOffset: 0
       currentActiveSplitter: -1
       realSizes:
-      - 344
-      - 801.6
+      - 310.39993
+      - 723.2
       relativeSizes:
       - 0.3
       - 0.7
@@ -1564,7 +1564,7 @@ MonoBehaviour:
       maxSizes:
       - 0
       - 0
-      lastTotalSize: 1145.6
+      lastTotalSize: 1033.6
       splitSize: 6
       xOffset: 0
       m_Version: 1
@@ -1638,8 +1638,8 @@ MonoBehaviour:
     m_CachedPref: 160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -127350
-  m_LastVerticalScrollValue: 760.00006
+  m_LastInspectedObjectInstanceID: -133006
+  m_LastVerticalScrollValue: 2130.4
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
