@@ -9,9 +9,13 @@ public class Deathzone : MonoBehaviour
     public float[] deathzoneSpeed;
     public int index = 0;
 
+    PlayerControls controlsScript;
 
+    private void Awake()
+    {
+        controlsScript = FindObjectOfType<PlayerControls>();
+    }
 
-    // Start is called before the first frame update
     void Start()
     {
         Ison = false;
@@ -46,9 +50,7 @@ public class Deathzone : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
-            Debug.Log("Player Died");
+            controlsScript.Death();
     }
-
-
 
 }

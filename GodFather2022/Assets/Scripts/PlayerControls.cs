@@ -71,13 +71,13 @@ public class PlayerControls : MonoBehaviour
 
         if (transform.position.y <= falloffThreshold)
         {
-            DisplayLose();
+            Death();
         }
     }
 
-    private void DisplayLose()
+    public void Death()
     {
-        Debug.Log("LEVEL CLEARED");
+        Debug.Log("GAME OVER");
         GameManager.instance.panelLose.SetActive(true);
         Time.timeScale = 0;
     }
