@@ -28,6 +28,6 @@ public class DeathzoneTrigger : MonoBehaviour
         if (collision.tag == "Player")
             Debug.Log("Deathzone Triggered");
         GameObject.FindGameObjectWithTag("Deathzone").gameObject.transform.position = deathzoneSpawnpoint.transform.position;
-            deathzoneScript.Ison = true;
+            deathzoneScript.isOn = true;
     }
 }
