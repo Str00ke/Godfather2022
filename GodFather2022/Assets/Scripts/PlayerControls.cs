@@ -82,7 +82,8 @@ public class PlayerControls : MonoBehaviour
         {
             Vector2 fall = new Vector2(playerRb.velocity.x, playerRb.velocity.y - gravityScale);
             playerRb.velocity = fall;
-            animator.SetBool("IsJumping", false);
+
+            animator.SetTrigger("IsFalling");
         }
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, groundTestVal, plateformLayer);
@@ -121,6 +122,7 @@ public class PlayerControls : MonoBehaviour
         {
             FindObjectOfType<AudioManager>().Play("PlayerTouchGround");
             isGrounded = true;
+            animator.SetBool("IsJumping", false);
         }
     }
 
