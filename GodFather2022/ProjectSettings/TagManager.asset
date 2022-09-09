@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Platform
   - Rock
+  - Deathzone
   layers:
   - Default
   - TransparentFX

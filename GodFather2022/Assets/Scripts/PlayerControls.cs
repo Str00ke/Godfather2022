@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerControls : MonoBehaviour
 {
     [Header("Player Componnents")]
-    public Rigidbody2D playerRb;
+    private Rigidbody2D playerRb;
 
     [Header("Movements Values")]
     public float speed;

@@ -5,6 +5,7 @@ using UnityEngine;
 public class DeathzoneTrigger : MonoBehaviour
 {
     private Deathzone deathzoneScript;
+    public GameObject deathzoneSpawnpoint;
 
     private void Awake()
     {
@@ -26,6 +27,7 @@ public class DeathzoneTrigger : MonoBehaviour
     {
         if (collision.tag == "Player")
             Debug.Log("Deathzone Triggered");
-            deathzoneScript.Ison = true;
+        GameObject.FindGameObjectWithTag("Deathzone").gameObject.transform.position = deathzoneSpawnpoint.transform.position;
+            deathzoneScript.isOn = true;
     }
 }
