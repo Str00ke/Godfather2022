@@ -22,6 +22,11 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] float groundTestVal;
     [SerializeField] LayerMask plateformLayer;
 
+
+    private Animator animator;
+
+    private float velocity = 0.0f;
+
     private void Awake()
     {
         playerRb = GetComponent<Rigidbody2D>();
@@ -32,6 +37,8 @@ public class PlayerControls : MonoBehaviour
     void Start()
     {
         FindObjectOfType<AudioManager>().Play("BgMusic");
+
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -48,6 +55,12 @@ public class PlayerControls : MonoBehaviour
 
         transform.Translate(movements * speed * Time.deltaTime);
 
+        velocity = Mathf.Abs(h);
+
+        animator.SetFloat("Velocity", velocity);
+
+        GetComponent<SpriteRenderer>().flipX = !(h >= 0);
+
         //Jump
 
         if (Input.GetKeyDown(KeyCode.Space) && baseVec.z > 0)
@@ -58,6 +71,9 @@ public class PlayerControls : MonoBehaviour
                 isGrounded = false;
                 Vector2 jump = new Vector2(playerRb.velocity.x, 1 * jumpIntensity);
                 playerRb.velocity = jump;
+
+                //Doesn't work
+                animator.SetBool("IsJumping", true);
             }
         }
 
@@ -66,6 +82,7 @@ public class PlayerControls : MonoBehaviour
         {
             Vector2 fall = new Vector2(playerRb.velocity.x, playerRb.velocity.y - gravityScale);
             playerRb.velocity = fall;
+            animator.SetBool("IsJumping", false);
         }
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, groundTestVal, plateformLayer);
