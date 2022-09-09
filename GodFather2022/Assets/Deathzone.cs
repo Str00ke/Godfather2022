@@ -5,7 +5,7 @@ using UnityEngine;
 public class Deathzone : MonoBehaviour
 {
     [Header("Deatzone Parameters")]
-    public bool Ison;
+    public bool isOn;
     public int[] deathzoneSpeed;
     public int index;
 
@@ -18,8 +18,7 @@ public class Deathzone : MonoBehaviour
 
     void Start()
     {
-        Ison = false;
-        index = deathzoneSpeed[0];
+        isOn = false;
     }
 
     // Update is called once per frame
@@ -30,10 +29,10 @@ public class Deathzone : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Ison)
+        if (isOn)
         {
             Vector2 moving = Vector2.right;
-            transform.Translate(moving * deathzoneSpeed[index] /75);
+            transform.Translate(moving * deathzoneSpeed[index] * Time.deltaTime);
         } else
         {
             Vector2 notMoving = new Vector2(0, 0);
@@ -43,9 +42,9 @@ public class Deathzone : MonoBehaviour
 
     public void ChangeInt()
     {
-        Ison = false;
+        isOn = false;
         index++;
-
+        print($"The index is now {index}");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

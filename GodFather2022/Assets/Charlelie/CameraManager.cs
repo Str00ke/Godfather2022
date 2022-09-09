@@ -47,7 +47,7 @@ public class CameraManager : MonoBehaviour
         changeScreenMat.SetFloat("_isActive", 1);
         GameManager.instance.UpdateBackground();
         cam.transform.position = new Vector3(cam.transform.position.x + horizontalSize - rightLimitThresold, cam.transform.position.y, -10);
-        deathzoneScript.Ison = false;
+        deathzoneScript.isOn = false;
         deathzoneScript.ChangeInt();
     }
 
