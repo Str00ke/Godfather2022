@@ -37,6 +37,7 @@ public class PlayerControls : MonoBehaviour
     void Start()
     {
         FindObjectOfType<AudioManager>().Play("BgMusic");
+        FindObjectOfType<AudioManager>().Stop("MenuMusic");
 
         animator = GetComponent<Animator>();
     }
