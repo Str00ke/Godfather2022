@@ -67,6 +67,7 @@ public class RockFall : MonoBehaviour
 
     private void DestroyRock()
     {
+        GetComponent<Animator>().SetTrigger("Destroy");
         blockInput.EnableInput(inputToBlock);
         //Destroy(this.gameObject);
         transform.position = startPos;
