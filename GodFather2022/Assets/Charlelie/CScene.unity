@@ -4612,8 +4612,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1936778349}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0221, y: 0.0221, z: 10}
-  m_LocalScale: {x: 8.026493, y: 9.970523, z: 1}
+  m_LocalPosition: {x: 0, y: 0.3175, z: 1.2}
+  m_LocalScale: {x: 1, y: 1.1489377, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 435749730}
@@ -5093,31 +5093,31 @@ PrefabInstance:
     - target: {fileID: 515282665797672626, guid: b59a36dfeaa90f046a0b3c2673476f88, type: 3}
       propertyPath: bgSpriteList.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 570a152fc06ad6e43998b47b5af985e2, type: 3}
+      objectReference: {fileID: 21300000, guid: 6bdb0a4b91dc95a438ac3ec7ab088a7d, type: 3}
     - target: {fileID: 515282665797672626, guid: b59a36dfeaa90f046a0b3c2673476f88, type: 3}
       propertyPath: bgSpriteList.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: 7a29db771e9b0e240ba61711f302c03c, type: 3}
+      objectReference: {fileID: 21300000, guid: fa88ef43fd09c904b81eb2cc44488acb, type: 3}
     - target: {fileID: 515282665797672626, guid: b59a36dfeaa90f046a0b3c2673476f88, type: 3}
       propertyPath: bgSpriteList.Array.data[2]
       value: 
-      objectReference: {fileID: 21300000, guid: b932106fafbbb874b8f4f2056a7eba86, type: 3}
+      objectReference: {fileID: 21300000, guid: 7d6a86506318ef74f819413336b449e1, type: 3}
     - target: {fileID: 515282665797672626, guid: b59a36dfeaa90f046a0b3c2673476f88, type: 3}
       propertyPath: bgSpriteList.Array.data[3]
       value: 
-      objectReference: {fileID: 21300000, guid: 0aa55ca12efa0214181f8e3fc6b64f8d, type: 3}
+      objectReference: {fileID: 21300000, guid: 00abf2b4c53d6744ab9fd7ec217f671c, type: 3}
     - target: {fileID: 515282665797672626, guid: b59a36dfeaa90f046a0b3c2673476f88, type: 3}
       propertyPath: bgSpriteList.Array.data[4]
       value: 
-      objectReference: {fileID: 21300000, guid: bbd9bdaa893a5914cacbf37a4bdd41ec, type: 3}
+      objectReference: {fileID: 21300000, guid: c15a91436ed61f24cbe0f90b157ff68c, type: 3}
     - target: {fileID: 515282665797672626, guid: b59a36dfeaa90f046a0b3c2673476f88, type: 3}
       propertyPath: bgSpriteList.Array.data[5]
       value: 
-      objectReference: {fileID: 21300000, guid: a3ba50216cc0b6946810cbb2c89392a3, type: 3}
+      objectReference: {fileID: 21300000, guid: eb16e28764b58784cb8bc75c56eaf745, type: 3}
     - target: {fileID: 515282665797672626, guid: b59a36dfeaa90f046a0b3c2673476f88, type: 3}
       propertyPath: bgSpriteList.Array.data[6]
       value: 
-      objectReference: {fileID: 21300000, guid: 79a76ce98f19fba479bfaeac8808f014, type: 3}
+      objectReference: {fileID: 21300000, guid: d02d14c8d9ed2cb448edaf91671a75fb, type: 3}
     - target: {fileID: 515282665797672626, guid: b59a36dfeaa90f046a0b3c2673476f88, type: 3}
       propertyPath: bgSpriteList.Array.data[7]
       value: 
@@ -6706,11 +6706,11 @@ PrefabInstance:
       objectReference: {fileID: 6243563839631935178}
     - target: {fileID: 7390639158233808904, guid: 62330e901db9077499df86c34e918152, type: 3}
       propertyPath: range
-      value: 5
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 7390639158233808904, guid: 62330e901db9077499df86c34e918152, type: 3}
       propertyPath: speed
-      value: 0.5
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 7390639158233808904, guid: 62330e901db9077499df86c34e918152, type: 3}
       propertyPath: yThresold
