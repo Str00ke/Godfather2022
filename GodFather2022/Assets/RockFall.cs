@@ -71,6 +71,7 @@ public class RockFall : MonoBehaviour
         //Destroy(this.gameObject);
         transform.position = startPos;
         FindObjectOfType<AudioManager>().Play("BreakRock");
+        
     }
 
     public enum InputBlock
