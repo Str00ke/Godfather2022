@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
 
 public class Visor : MonoBehaviour
 {
@@ -28,14 +29,44 @@ public class Visor : MonoBehaviour
 
     void Update()
     {
+        //Get Joystick Names
+        string[] temp = Input.GetJoystickNames();
 
-        if (Joystick.all.Count <= 0)
+        //Check whether array contains anything
+        if (temp.Length > 0)
         {
+            //Iterate over every element
+            for (int i = 0; i < temp.Length; ++i)
+            {
+                //Check if the string is empty or not
+                if (!string.IsNullOrEmpty(temp[i]))
+                {
+                    //Not empty, controller temp[i] is connected
+                    //Debug.Log("Controller " + i + " is connected using: " + temp[i]);
+                }
+                else
+                {
+                    //If it is empty, controller i is disconnected
+                    //where i indicates the controller number
+                    //Debug.Log("Controller: " + i + " is disconnected.");
+
+                }
+            }
+        }
+        if (string.IsNullOrEmpty(temp[0]))
+        {
+            //Debug.Log(transform.localPosition.x);
+            //Debug.Log(zone.rect.xMin);
+            //Debug.Log(zone.rect.xMax);
             transform.position = Input.mousePosition;
-            float xVal = Mathf.Clamp(transform.position.x, zone.rect.xMin, zone.rect.xMax);
-            float yVal = Mathf.Clamp(transform.position.y, zone.rect.yMin, zone.rect.yMax);
+            float xVal = Mathf.Clamp(transform.localPosition.x, -80, 80);
+            float yVal = Mathf.Clamp(transform.localPosition.y, zone.rect.yMin, zone.rect.yMax);
+            Debug.Log("XVAL: " + xVal);
             transform.position = zone.transform.position + new Vector3(xVal, yVal, 0);
-            if (Input.GetMouseButtonDown(0)) Shoot();
+            if (Input.GetMouseButtonDown(0))
+            { 
+                Shoot(); 
+            }
         }
         else
         {
