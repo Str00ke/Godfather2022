@@ -38,8 +38,10 @@ public class PlayerControls : MonoBehaviour
     void Update()
     {
         // Movements
-
-        Vector2 movements = new Vector2(Input.GetAxisRaw("Horizontal"), playerRb.velocity.y);
+        float h = 0;
+        if (Input.GetKey(KeyCode.Q)) h = -1;
+        else if (Input.GetKey(KeyCode.D)) h = 1;
+        Vector2 movements = new Vector2(/*Input.GetAxisRaw("Horizontal")*/h, playerRb.velocity.y);
 
         if (movements.x < 0 && baseVec.x == 0) movements.x = 0;
         if (movements.x > 0 && baseVec.y == 0) movements.x = 0;
@@ -48,7 +50,7 @@ public class PlayerControls : MonoBehaviour
 
         //Jump
 
-        if (Input.GetKeyDown(KeyCode.Z) && baseVec.z > 0)
+        if (Input.GetKeyDown(KeyCode.Space) && baseVec.z > 0)
         {
             if (isGrounded)
             {
@@ -81,6 +83,7 @@ public class PlayerControls : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("Lose");
         GameManager.instance.panelLose.SetActive(true);
         Time.timeScale = 0;
+        Destroy(gameObject);
     }
 
 
@@ -99,7 +102,6 @@ public class PlayerControls : MonoBehaviour
     {
         if(collision.gameObject.tag == "Platform")
         {
-            FindObjectOfType<AudioManager>().Stop("BgMusic");
             FindObjectOfType<AudioManager>().Play("PlayerTouchGround");
             isGrounded = true;
         }

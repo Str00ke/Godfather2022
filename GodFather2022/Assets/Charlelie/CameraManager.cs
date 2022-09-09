@@ -9,6 +9,7 @@ public class CameraManager : MonoBehaviour
     [SerializeField] private float rightLimitThresold;
     [SerializeField] private GameObject player;
     [SerializeField] private Material changeScreenMat;
+    
 
     private Deathzone deathzoneScript;
     private Camera cam;
@@ -25,6 +26,7 @@ public class CameraManager : MonoBehaviour
 
     void Start()
     {
+        GameManager.instance.UpdateBackground();
         Texture2D tex = RTImage();
         changeScreenMat.SetTexture("_PrevScreenTex", tex);
         changeScreenMat.SetFloat("_isActive", 1);
@@ -32,6 +34,8 @@ public class CameraManager : MonoBehaviour
 
     void Update()
     {
+        if (player == null) return;
+
         if (player.transform.position.x >= (cam.transform.position.x + horizontalSize / 2) - leftLimitThresold)
             ChangeScreen();
     }
@@ -41,7 +45,7 @@ public class CameraManager : MonoBehaviour
         //Texture2D tex = RTImage();
         //changeScreenMat.SetTexture("_PrevScreenTex", tex);
         changeScreenMat.SetFloat("_isActive", 1);
-
+        GameManager.instance.UpdateBackground();
         cam.transform.position = new Vector3(cam.transform.position.x + horizontalSize - rightLimitThresold, cam.transform.position.y, -10);
         deathzoneScript.Ison = false;
         deathzoneScript.ChangeInt();
