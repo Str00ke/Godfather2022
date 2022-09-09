@@ -23,7 +23,7 @@ public class Visor : MonoBehaviour
 
     void Start()
     {
-        transform.position = zone.transform.position + (Vector3)zone.rect.center;
+        GetComponent<RectTransform>().anchoredPosition = new Vector3(0, 8);//zone.transform.localPosition + (Vector3)zone.rect.center;
     }
 
 
@@ -61,7 +61,7 @@ public class Visor : MonoBehaviour
             transform.position = Input.mousePosition;
             float xVal = Mathf.Clamp(transform.localPosition.x, -80, 80);
             float yVal = Mathf.Clamp(transform.localPosition.y, zone.rect.yMin, zone.rect.yMax);
-            Debug.Log("XVAL: " + xVal);
+
             transform.position = zone.transform.position + new Vector3(xVal, yVal, 0);
             if (Input.GetMouseButtonDown(0))
             { 
