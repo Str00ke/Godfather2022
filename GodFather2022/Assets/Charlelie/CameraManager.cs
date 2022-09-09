@@ -43,8 +43,8 @@ public class CameraManager : MonoBehaviour
         //Texture2D tex = RTImage();
         //changeScreenMat.SetTexture("_PrevScreenTex", tex);
         changeScreenMat.SetFloat("_isActive", 1);
-        GameManager.instance.UpdateBackground();
         cam.transform.position = new Vector3(cam.transform.position.x + horizontalSize - rightLimitThresold, cam.transform.position.y, -10);
+        GameManager.instance.UpdateBackground();
     }
 
     Texture2D toTexture2D(RenderTexture rTex)

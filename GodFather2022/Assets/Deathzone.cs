@@ -32,17 +32,19 @@ public class Deathzone : MonoBehaviour
         if (Ison)
         {
             Vector2 moving = Vector2.right;
-            transform.Translate(moving * deathzoneSpeed[index] /50);
+            transform.Translate(moving * deathzoneSpeed[index] * Time.deltaTime);
         } else
         {
-            Vector2 notMoving = new Vector2(0, 0);
-            transform.Translate(notMoving);
+            //Vector2 notMoving = new Vector2(0, 0);
+            //transform.Translate(notMoving);
         }
     }
 
-    private void ChangeInt()
+    public void ChangeInt()
     {
         Ison = false;
+
+        transform.position = new Vector3(Camera.main.transform.position.x - (GetComponent<BoxCollider2D>().size.x * 40), transform.position.y);
         index++;
 
     }

@@ -77,6 +77,7 @@ public class GameManager : MonoBehaviour
     public void UpdateBackground()
     {
         index++;
+        FindObjectOfType<Deathzone>().ChangeInt();
         bgSr.sprite = bgSpriteArr[index];
         q.sprite = uiQSpriteList[uiSpriteArr[index]];
         d.sprite = uiDSpriteList[uiSpriteArr[index]];
