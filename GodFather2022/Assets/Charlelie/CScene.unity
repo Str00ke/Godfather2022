@@ -1201,9 +1201,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRb: {fileID: 0}
-  speed: 4
-  jumpIntensity: 1.5
-  gravityScale: 0.03
+  speed: 3
+  jumpIntensity: 1.2
+  gravityScale: 0.047
   falloffThreshold: -5
   isGrounded: 0
   baseVec: {x: 0, y: 0, z: 0}
