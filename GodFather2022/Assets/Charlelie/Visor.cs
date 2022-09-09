@@ -29,31 +29,44 @@ public class Visor : MonoBehaviour
     void Update()
     {
 
-        Vector2 vec = Joystick.current.stick.ReadValue();
-
-
-        if (vec.x > 0)
+        if (Joystick.all.Count <= 0)
         {
-            if (transform.localPosition.x + vec.x > zone.rect.xMax) vec.x = 0;
+            transform.position = Input.mousePosition;
+            float xVal = Mathf.Clamp(transform.position.x, zone.rect.xMin, zone.rect.xMax);
+            float yVal = Mathf.Clamp(transform.position.y, zone.rect.yMin, zone.rect.yMax);
+            transform.position = zone.transform.position + new Vector3(xVal, yVal, 0);
+            if (Input.GetMouseButtonDown(0)) Shoot();
         }
-        else if (vec.x < 0)
+        else
         {
-            if (transform.localPosition.x + vec.x < zone.rect.xMin) vec.x = 0;
+
+            Vector2 vec = Joystick.current.stick.ReadValue();
+
+
+            if (vec.x > 0)
+            {
+                if (transform.localPosition.x + vec.x > zone.rect.xMax) vec.x = 0;
+            }
+            else if (vec.x < 0)
+            {
+                if (transform.localPosition.x + vec.x < zone.rect.xMin) vec.x = 0;
+            }
+
+            if (vec.y > 0)
+            {
+                if (rT.anchoredPosition.y + vec.y + yThresold > zone.rect.yMax) vec.y = 0;
+            }
+            else if (vec.y < 0)
+            {
+                if (rT.anchoredPosition.y + vec.y < zone.rect.yMin) vec.y = 0;
+            }
+
+            transform.position += (Vector3)vec * speed;
+
+            if (Joystick.current.trigger.isPressed && !hasShot) Shoot();
+            else if (!Joystick.current.trigger.isPressed && hasShot) hasShot = false;
         }
 
-        if (vec.y > 0)
-        {
-            if (rT.anchoredPosition.y + vec.y + yThresold > zone.rect.yMax) vec.y = 0;
-        }
-        else if (vec.y < 0)
-        {
-            if (rT.anchoredPosition.y + vec.y < zone.rect.yMin) vec.y = 0;
-        }
-
-        transform.position += (Vector3)vec * speed;
-
-        if (Joystick.current.trigger.isPressed && !hasShot) Shoot();
-        else if (!Joystick.current.trigger.isPressed && hasShot) hasShot = false;
     }
 
     void Shoot()
